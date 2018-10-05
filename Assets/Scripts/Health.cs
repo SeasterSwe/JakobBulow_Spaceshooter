@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour {
 
-    [Range(1, 5)]
-    public int playerHP, enemyHP;
+    [Range(1, 10)]
+    public int HP;
 
     private float health;
     private int maxHealth;
@@ -16,18 +16,9 @@ public class Health : MonoBehaviour {
     {
 
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
-
-        if (gameObject.tag == "Player")
-        {
-            maxHealth = playerHP;
-            health = playerHP;
-        }
-
-        if (gameObject.tag == "Enemy")
-        {
-            maxHealth = enemyHP;
-            health = enemyHP;
-        }
+        maxHealth = HP;
+        health = HP;
+             
 	}
 	
 	
@@ -43,6 +34,13 @@ public class Health : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.tag == "Bullet")
+        {
+            Destroy(coll.gameObject);
+            health -= 1;
+            dmgColor = Color.Lerp(Color.white, Color.red, 1f - (health / maxHealth));
+            spriteRen.color = dmgColor;
+        }
+        if (gameObject.tag == "Player" && coll.tag == "Enemy")
         {
             Destroy(coll.gameObject);
             health -= 1;

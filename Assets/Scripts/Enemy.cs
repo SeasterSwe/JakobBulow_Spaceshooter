@@ -9,17 +9,17 @@ public class Enemy : MonoBehaviour {
     public float speed;
     protected Rigidbody2D rb2;
 
-	void Start ()
+    void Awake()
     {
         rb2 = gameObject.GetComponent<Rigidbody2D>();
-	}
-
-	void Update ()
-    {
-        move();
     }
 
-    public virtual void move()
+    void Update ()
+    {
+        Move();
+    }
+
+    public virtual void Move()
     {
         rb2.velocity = new Vector2(-speed, 0);
     }

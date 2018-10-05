@@ -7,7 +7,6 @@ public class PlayerShooting : MonoBehaviour
 
     [Range(0, 20)]
     public float bulletRange, fireRate, bulletSpeed;
-    public int bulletDmg = 1;
 
     public string ShootButton = "Fire1";
 
