@@ -28,7 +28,7 @@ public class PlayerShooting : MonoBehaviour
     {
         GameObject clone;
         clone = Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
-        clone.GetComponent<Rigidbody2D>().velocity = (Vector2)transform.up * bulletSpeed;
+        clone.GetComponent<Rigidbody2D>().velocity = (Vector2)transform.up   * bulletSpeed;
         Destroy(clone, bulletRange);
     }
 }
