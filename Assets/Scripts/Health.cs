@@ -12,22 +12,44 @@ public class Health : MonoBehaviour {
     private Color dmgColor = Color.white;
     private SpriteRenderer spriteRen;
 
-    void Awake ()
+    public ParticleSystem Explotion;
+    private ParticleSystem ExplotionClone;
+
+    public AudioClip ExplotionSound;
+    private AudioSource audioSource;
+
+    private bool canDie = true;
+
+    void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = ExplotionSound;
 
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
         maxHealth = HP;
         health = HP;
-             
-	}
-	
-	
-	void Update ()
+
+    }
+
+
+    void Update()
     {
         if (health <= 0)
+            Death();
+    }
+
+    public void Death()
+    {
+        if (canDie)
         {
-            Destroy(gameObject);
-            //Boomeffect och sound
+            audioSource.Play();
+            Destroy(gameObject, audioSource.clip.length);
+            ExplotionClone = Instantiate(Explotion, gameObject.transform.position, Explotion.transform.rotation);
+            spriteRen.enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            Destroy(ExplotionClone, 0.5f);
+
+            canDie = false;
         }
     }
 
