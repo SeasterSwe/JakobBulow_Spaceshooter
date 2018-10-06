@@ -15,20 +15,16 @@ public class Health : MonoBehaviour {
     public ParticleSystem Explotion;
     private ParticleSystem ExplotionClone;
 
-    public AudioClip ExplotionSound;
-    private AudioSource audioSource;
+    public GameObject explotionSound;
+    public GameObject hitSound;
 
     private bool canDie = true;
 
     void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = ExplotionSound;
-
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
         maxHealth = HP;
         health = HP;
-
     }
 
 
@@ -42,13 +38,10 @@ public class Health : MonoBehaviour {
     {
         if (canDie)
         {
-            audioSource.Play();
-            Destroy(gameObject, audioSource.clip.length);
             ExplotionClone = Instantiate(Explotion, gameObject.transform.position, Explotion.transform.rotation);
-            spriteRen.enabled = false;
-            gameObject.GetComponent<Collider2D>().enabled = false;
             Destroy(ExplotionClone, 0.5f);
-
+            Instantiate(explotionSound);
+            Destroy(gameObject);
             canDie = false;
         }
     }
@@ -57,14 +50,19 @@ public class Health : MonoBehaviour {
     {
         if (coll.tag == "Bullet")
         {
+            Instantiate(hitSound);
             Destroy(coll.gameObject);
             health -= 1;
             dmgColor = Color.Lerp(Color.white, Color.red, 1f - (health / maxHealth));
             spriteRen.color = dmgColor;
         }
         if (gameObject.tag == "Player" && coll.tag == "Enemy")
-        {
+        {   
             Destroy(coll.gameObject);
+            ExplotionClone = Instantiate(Explotion, gameObject.transform.position, Explotion.transform.rotation);
+            Destroy(ExplotionClone, 0.5f);
+            Instantiate(hitSound);
+
             health -= 1;
             dmgColor = Color.Lerp(Color.white, Color.red, 1f - (health / maxHealth));
             spriteRen.color = dmgColor;
