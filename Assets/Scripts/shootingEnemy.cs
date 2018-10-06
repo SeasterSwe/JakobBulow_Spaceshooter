@@ -16,9 +16,12 @@ public class shootingEnemy : Enemy {
 
     public virtual void Shoot()
     {
-        GameObject enemyBullet;
-        enemyBullet = Instantiate(Bullet, gameObject.transform.position, gameObject.transform.rotation);
-        enemyBullet.GetComponent<Rigidbody2D>().velocity = transform.up * -bulletSpeed;
-        Destroy(enemyBullet, bulletRange);      
+        if (Bullet != null)
+        {
+            GameObject enemyBullet;
+            enemyBullet = Instantiate(Bullet, gameObject.transform.position, gameObject.transform.rotation);
+            enemyBullet.GetComponent<Rigidbody2D>().velocity = transform.up * -bulletSpeed;
+            Destroy(enemyBullet, bulletRange);
+        }
     }
 }
