@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class destroySoundObject : MonoBehaviour {
 
+    private AudioSource boi;
+    public AudioClip boi2;
     private void Awake()
-    {   
-        //byta ut 5f till typ "Audio.Lenght
-        Destroy(gameObject, 5f);
+    {
+        boi = GetComponent<AudioSource>();
+        boi.clip = boi2;
+        Destroy(gameObject, boi.clip.length);
     }
 }

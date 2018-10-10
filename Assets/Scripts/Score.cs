@@ -6,7 +6,7 @@ using TMPro;
 public class Score : MonoBehaviour {
 
     private static TextMeshPro s_Text;
-    private static float score;
+    public static float score;
 
     private void Awake()
     {
@@ -22,6 +22,6 @@ public class Score : MonoBehaviour {
     }
     private static void UpdateScore()
     {
-        s_Text.text = "Score : " + Mathf.Round(score * 100)/100;
+        s_Text.text = "Score : " + Mathf.RoundToInt(score);
     }
 }

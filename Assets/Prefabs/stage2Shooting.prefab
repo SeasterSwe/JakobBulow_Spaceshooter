@@ -119,7 +119,7 @@ MonoBehaviour:
   Bullet: {fileID: 1745797096963746, guid: 00a79bb4e113bac4daa2525aab3aa09b, type: 2}
   bulletRange: 3
   bulletSpeed: 8
-  bulletDelay: 0.8
+  bulletDelay: 0.9
 --- !u!114 &114256311916648700
 MonoBehaviour:
   m_ObjectHideFlags: 1

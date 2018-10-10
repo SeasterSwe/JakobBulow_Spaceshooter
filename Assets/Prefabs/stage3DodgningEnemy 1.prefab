@@ -143,8 +143,8 @@ MonoBehaviour:
   bulletRange: 0
   bulletSpeed: 0
   bulletDelay: 0
-  swaySpeed: -2.09
-  swayStregth: 3.88
+  swaySpeed: 4
+  swayStregth: 4
 --- !u!212 &212444712729316850
 SpriteRenderer:
   m_ObjectHideFlags: 1
