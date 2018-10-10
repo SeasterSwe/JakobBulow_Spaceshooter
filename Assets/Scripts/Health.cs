@@ -42,6 +42,7 @@ public class Health : MonoBehaviour {
             Destroy(ExplotionClone, 0.5f);
             Instantiate(explotionSound);
             Destroy(gameObject);
+            Score.AddScore(maxHealth, 12);
             canDie = false;
         }
     }
