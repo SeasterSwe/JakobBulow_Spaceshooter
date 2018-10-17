@@ -73,7 +73,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00badeae4cae4414f8da9d8914c39f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 3
+  HP: 4
   Explotion: {fileID: 198759747372381262, guid: 1856717b43c345c4fbee984df199f27f,
     type: 2}
   explotionSound: {fileID: 1018464430623518, guid: 2245bf68f35a86741a3ea2a98d4ce5e1,
@@ -144,7 +144,8 @@ MonoBehaviour:
   bulletSpeed: 0
   bulletDelay: 0
   swaySpeed: 4
-  swayStregth: 4
+  swayStregth: 2
+  swayCorrection: 2
 --- !u!212 &212444712729316850
 SpriteRenderer:
   m_ObjectHideFlags: 1

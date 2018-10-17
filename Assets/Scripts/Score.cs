@@ -15,6 +15,13 @@ public class Score : MonoBehaviour {
         UpdateScore();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+            score += 1000;
+        UpdateScore();
+    }
+
     static public void AddScore(float amount, float multi = 1)
     {
         score += (amount * multi)/3.6f;

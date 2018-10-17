@@ -34,7 +34,7 @@ public class enemySpawner : MonoBehaviour {
             }
             if (Score.score >= 40)
             {
-                spawnNumbMin = 3;
+                spawnNumbMin = 4;
                 spawnNumMax = 6;
             }
         }
@@ -48,6 +48,6 @@ public class enemySpawner : MonoBehaviour {
 
     private Vector3 spawnPoint()
     {
-        return new Vector2(10, Random.Range(-4.5f, 4.5f));
+        return new Vector2(10, Random.Range(-4.3f, 4.3f));
     }
 }

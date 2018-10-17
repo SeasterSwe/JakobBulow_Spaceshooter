@@ -39,7 +39,7 @@ public class Health : MonoBehaviour {
         if (canDie)
         {
             ExplotionClone = Instantiate(Explotion, gameObject.transform.position, Explotion.transform.rotation);
-            Destroy(ExplotionClone, 0.5f);
+            Destroy(ExplotionClone.gameObject, 0.5f);
             Instantiate(explotionSound);
             Destroy(gameObject);
             Score.AddScore(maxHealth, 12);
