@@ -25,7 +25,7 @@ public class enemySpawner : MonoBehaviour {
         spawnRate -= 0.1f * Time.deltaTime;
         if (spawnColdown <= 0)
         {
-            Instantiate(enemys[Random.Range(spawnNumbMin, spawnNumMax)], PointOutSideScreen(), Quaternion.Euler(0, 0, -90));
+            Instantiate(enemys[Random.Range(spawnNumbMin, spawnNumMax)], spawnPoint(), Quaternion.Euler(0, 0, -90));
             spawnColdown = spawnRate / 60;
             if (Score.score >= 20)
             {
@@ -46,12 +46,8 @@ public class enemySpawner : MonoBehaviour {
 
 	}
 
-    private Vector3 PointOutSideScreen()
+    private Vector3 spawnPoint()
     {
-        //float size = Camera.main.orthographicSize;
-        //size *= Camera.main.aspect;
-        //size += 1.2f; //Hur långt utanför det ska spawnas
-        //return new Vector2(1f, Random.Range(-1f, 1f)).normalized * size;
         return new Vector2(10, Random.Range(-4.5f, 4.5f));
     }
 }

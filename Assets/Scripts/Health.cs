@@ -45,6 +45,10 @@ public class Health : MonoBehaviour {
             Score.AddScore(maxHealth, 12);
             canDie = false;
         }
+        if (gameObject.tag == "Player")
+        {
+            //restart
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D coll)
