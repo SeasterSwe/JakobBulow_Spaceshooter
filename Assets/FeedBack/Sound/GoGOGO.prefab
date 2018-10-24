@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 82493075448815742}
   - component: {fileID: 114857654605837466}
   m_Layer: 0
-  m_Name: explotionSound
+  m_Name: GoGOGO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 21b6a7ba92e88874bbeed19991db99ca, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.386
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -147,4 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d96b5615e83f644b3c4b50e8d730da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boi2: {fileID: 8300000, guid: 21b6a7ba92e88874bbeed19991db99ca, type: 3}
+  boi2: {fileID: 8300000, guid: b04c5e2288ac76f479a36af81bf8c715, type: 3}

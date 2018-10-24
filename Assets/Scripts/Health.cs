@@ -55,9 +55,9 @@ public class Health : MonoBehaviour {
     {
         if (coll.tag == "Bullet")
         {
-            Instantiate(hitSound);
-            Destroy(coll.gameObject);
             health -= 1;
+            InstaSoundHit(hitSound);
+            Destroy(coll.gameObject);
             dmgColor = Color.Lerp(Color.white, Color.red, 1f - (health / maxHealth));
             spriteRen.color = dmgColor;
         }
@@ -66,12 +66,17 @@ public class Health : MonoBehaviour {
             Destroy(coll.gameObject);
             ExplotionClone = Instantiate(Explotion, gameObject.transform.position, Explotion.transform.rotation);
             Destroy(ExplotionClone, 0.5f);
-            Instantiate(hitSound);
+            InstaSoundHit(hitSound);
 
             health -= 1;
             dmgColor = Color.Lerp(Color.white, Color.red, 1f - (health / maxHealth));
             spriteRen.color = dmgColor;
         }
+    }
+    public void InstaSoundHit(GameObject sound)
+    {
+        if (health > 0)
+            Instantiate(sound);
     }
 
 }

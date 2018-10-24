@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour {
     [Range(0,16)]
     public float speed, speedX;
 
-    public GameObject Player;
+    private GameObject Player;
     private Rigidbody2D rb2;
 
 	void Start ()
