@@ -17,6 +17,7 @@ public class Health : MonoBehaviour {
 
     public GameObject explotionSound;
     public GameObject hitSound;
+    public GameObject hitFlash;
 
     private bool canDie = true;
 
@@ -45,10 +46,6 @@ public class Health : MonoBehaviour {
             Score.AddScore(maxHealth, 12);
             canDie = false;
         }
-        if (gameObject.tag == "Player")
-        {
-            //restart
-        }
     }
 
     public void OnTriggerEnter2D(Collider2D coll)
@@ -59,10 +56,11 @@ public class Health : MonoBehaviour {
             InstaSoundHit(hitSound);
             Destroy(coll.gameObject);
             dmgColor = Color.Lerp(Color.white, Color.red, 1f - (health / maxHealth));
-            spriteRen.color = dmgColor;
+            spriteRen.color = dmgColor;        
         }
-        if (gameObject.tag == "Player" && coll.tag == "Enemy")
-        {   
+
+        else if (gameObject.tag == "Player" && coll.tag == "Enemy")
+        {
             Destroy(coll.gameObject);
             ExplotionClone = Instantiate(Explotion, gameObject.transform.position, Explotion.transform.rotation);
             Destroy(ExplotionClone, 0.5f);
@@ -78,5 +76,6 @@ public class Health : MonoBehaviour {
         if (health > 0)
             Instantiate(sound);
     }
-
 }
+  
+

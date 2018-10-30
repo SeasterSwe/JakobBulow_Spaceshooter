@@ -121,12 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00badeae4cae4414f8da9d8914c39f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 4
+  HP: 5
   Explotion: {fileID: 198759747372381262, guid: 1856717b43c345c4fbee984df199f27f,
     type: 2}
   explotionSound: {fileID: 1018464430623518, guid: 2245bf68f35a86741a3ea2a98d4ce5e1,
     type: 2}
   hitSound: {fileID: 1039314895750448, guid: 690c98c111e0a3e459fc6fdfbee9a2ff, type: 2}
+  hitFlash: {fileID: 0}
 --- !u!114 &114386478831207638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +146,6 @@ MonoBehaviour:
   bulletDelay: 0
   swaySpeed: 4
   swayStregth: 2
-  swayCorrection: 2
 --- !u!212 &212444712729316850
 SpriteRenderer:
   m_ObjectHideFlags: 1

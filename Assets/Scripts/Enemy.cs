@@ -23,4 +23,9 @@ public class Enemy : MonoBehaviour {
     {
         rb2.velocity = new Vector2(-speed, 0);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+            Destroy(gameObject);
+    }
 }

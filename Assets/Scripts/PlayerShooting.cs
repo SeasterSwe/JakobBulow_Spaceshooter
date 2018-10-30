@@ -12,6 +12,8 @@ public class PlayerShooting : MonoBehaviour
 
     private float nextFire;
     public GameObject bullet;
+    public GameObject shootFlash;
+
     private Vector2 direction;
 
     public AudioClip laserSound;
@@ -35,9 +37,13 @@ public class PlayerShooting : MonoBehaviour
 
     private void Fire()
     {
-        GameObject clone;
-        clone = Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
-        clone.GetComponent<Rigidbody2D>().velocity = (Vector2)transform.up   * bulletSpeed;
-        Destroy(clone, bulletRange);
+        GameObject cloneBullet;
+        GameObject cloneShootFlash;
+
+        cloneShootFlash = Instantiate(shootFlash, gameObject.transform.position, shootFlash.transform.rotation);
+        Destroy(cloneShootFlash.gameObject, 0.12f);
+        cloneBullet = Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
+        cloneBullet.GetComponent<Rigidbody2D>().velocity = (Vector2)transform.up   * bulletSpeed;
+        Destroy(cloneBullet, bulletRange);
     }
 }

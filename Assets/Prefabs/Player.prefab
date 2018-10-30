@@ -368,8 +368,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  speedX: 0
-  Player: {fileID: 0}
 --- !u!114 &114178437893703266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -381,12 +379,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00badeae4cae4414f8da9d8914c39f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 6
+  HP: 3
   Explotion: {fileID: 198759747372381262, guid: 1856717b43c345c4fbee984df199f27f,
     type: 2}
   explotionSound: {fileID: 1018464430623518, guid: 2245bf68f35a86741a3ea2a98d4ce5e1,
     type: 2}
   hitSound: {fileID: 1947269364785138, guid: 3bfbf95fb19f5bd40a8c4dcfce960249, type: 2}
+  hitFlash: {fileID: 0}
 --- !u!114 &114743845984169768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -403,6 +402,7 @@ MonoBehaviour:
   bulletSpeed: 12.5
   ShootButton: Fire1
   bullet: {fileID: 1253617834598192, guid: 7fda5da105038aa4bbd7926f89ab9760, type: 2}
+  shootFlash: {fileID: 0}
   laserSound: {fileID: 8300000, guid: 820d909839ccfb542ba570f06f84e681, type: 3}
 --- !u!114 &114894105266259032
 MonoBehaviour:
@@ -420,6 +420,7 @@ MonoBehaviour:
   bulletSpeed: 12.5
   ShootButton: Fire1
   bullet: {fileID: 1253617834598192, guid: 7fda5da105038aa4bbd7926f89ab9760, type: 2}
+  shootFlash: {fileID: 0}
   laserSound: {fileID: 8300000, guid: 820d909839ccfb542ba570f06f84e681, type: 3}
 --- !u!212 &212737771189938098
 SpriteRenderer:

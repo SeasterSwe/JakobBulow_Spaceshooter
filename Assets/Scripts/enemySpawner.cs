@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class enemySpawner : MonoBehaviour {
 
-    public GameObject lvlUp;
+    public GameObject lvlUpClingSound;
+    public GameObject lvlUpEffect;
+    public GameObject lvlUpSound;
     public GameObject[] enemys;
     public float spawnRatePerS;
 
@@ -33,6 +35,7 @@ public class enemySpawner : MonoBehaviour {
         if(spawnDelay < waitSeconds)
             spawnDelay = Time.time *0.5f;
         spawnRate -= 0.1f * Time.deltaTime;
+
         if (spawnColdown <= 0 && waitSeconds < spawnDelay)
         {
             Instantiate(enemys[Random.Range(spawnNumbMin, spawnNumMax)], spawnPoint(), Quaternion.Euler(0, 0, -90));
@@ -41,15 +44,15 @@ public class enemySpawner : MonoBehaviour {
             if (Score.score >= 120 && doOnce2)
             {
                 //BakrundScroller.scalar = 2f;
-                Instantiate(lvlUp);
+                lvlUp(lvlUpEffect, lvlUpClingSound, lvlUpSound);
                 spawnNumbMin = 4;
                 spawnNumMax = 6;
                 doOnce2 = false;
             }
-            if (Score.score >= 40 && doOnce)
+            else if (Score.score >= 40 && doOnce)
             {
                 //BakrundScroller.scalar = 1.5f;
-                Instantiate(lvlUp);
+                lvlUp(lvlUpSound, lvlUpClingSound, lvlUpEffect);
                 spawnNumbMin = 1;
                 spawnNumMax = 4;
                 doOnce = false;
@@ -62,6 +65,13 @@ public class enemySpawner : MonoBehaviour {
         }
 
 	}
+    public void lvlUp(GameObject Sound, GameObject Cling, GameObject Effect)
+    {
+        GameObject effectClone = Instantiate(Effect, gameObject.transform.position, Effect.transform.rotation);
+        Instantiate(Sound);
+        Instantiate(Cling);
+        Destroy(effectClone.gameObject, 1.8f);
+    }
 
     private Vector3 spawnPoint()
     {

@@ -428,7 +428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.46, y: 2.8332}
+  m_AnchoredPosition: {x: -4.46, y: 3.82}
   m_SizeDelta: {x: 26.84, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &516305209
@@ -646,6 +646,12 @@ Prefab:
       propertyPath: m_Volume
       value: 0.22
       objectReference: {fileID: 0}
+    - target: {fileID: 114078750069971194, guid: e32888941beb06c4aa44e60fdb28a09d,
+        type: 2}
+      propertyPath: gameOverSound
+      value: 
+      objectReference: {fileID: 1018464430623518, guid: 4001ad986fea591409f801c5e8364b5e,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e32888941beb06c4aa44e60fdb28a09d, type: 2}
   m_IsPrefabAsset: 0
@@ -658,10 +664,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1828276936}
   - component: {fileID: 1828276935}
+  - component: {fileID: 1828276937}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -676,7 +683,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd569f51ada31004f991be5fd77ab70c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvlUp: {fileID: 1018464430623518, guid: 22b092ffab132c441a4d12173862a050, type: 2}
+  lvlUpEffect: {fileID: 1580146087738818, guid: 212e1d5c545c5fc4397ff9a5aa97f196,
+    type: 2}
+  lvlUpSound: {fileID: 1018464430623518, guid: 22b092ffab132c441a4d12173862a050, type: 2}
   enemys:
   - {fileID: 1623086469401800, guid: 7e1fe9eb9cbe6f24298dcf86d65a5a72, type: 2}
   - {fileID: 1539957291342816, guid: ab43fcc004273874683c358c285936cb, type: 2}
@@ -693,7 +702,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1828276934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 1.08, z: -0.156974}
+  m_LocalPosition: {x: -0.05, y: -0.16, z: -0.156974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 516305208}
@@ -701,6 +710,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1828276937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1828276934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8695a8af3686344a8673c21a8b5291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverSound: {fileID: 1018464430623518, guid: 4001ad986fea591409f801c5e8364b5e,
+    type: 2}
 --- !u!1001 &2075474842
 Prefab:
   m_ObjectHideFlags: 0

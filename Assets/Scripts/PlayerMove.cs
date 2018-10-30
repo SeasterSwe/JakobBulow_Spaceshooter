@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour {
 
     [Range(0,16)]
-    public float speed, speedX;
+    public float speed;
 
     private GameObject Player;
     private Rigidbody2D rb2;
@@ -21,6 +21,6 @@ public class PlayerMove : MonoBehaviour {
 	void Update ()
     {
         float speedY = Input.GetAxis("Vertical") * speed;
-        rb2.velocity = new Vector2(speedX, speedY);       
+        rb2.velocity = new Vector2(0, speedY);       
 	}
 }

@@ -133,6 +133,7 @@ MonoBehaviour:
   explotionSound: {fileID: 1018464430623518, guid: 2245bf68f35a86741a3ea2a98d4ce5e1,
     type: 2}
   hitSound: {fileID: 1039314895750448, guid: 690c98c111e0a3e459fc6fdfbee9a2ff, type: 2}
+  hitFlash: {fileID: 0}
 --- !u!212 &212827126876710264
 SpriteRenderer:
   m_ObjectHideFlags: 1
