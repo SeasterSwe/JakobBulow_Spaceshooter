@@ -7,6 +7,8 @@ public class enemySpawner : MonoBehaviour {
     public GameObject lvlUpClingSound;
     public GameObject lvlUpEffect;
     public GameObject lvlUpSound;
+    //public GameObject speedEffect;
+
     public GameObject[] enemys;
     public float spawnRatePerS;
 
@@ -43,7 +45,7 @@ public class enemySpawner : MonoBehaviour {
 
             if (Score.score >= 120 && doOnce2)
             {
-                //BakrundScroller.scalar = 2f;
+                BakrundScroller.scalar = 4f;
                 lvlUp(lvlUpEffect, lvlUpClingSound, lvlUpSound);
                 spawnNumbMin = 4;
                 spawnNumMax = 6;
@@ -51,7 +53,8 @@ public class enemySpawner : MonoBehaviour {
             }
             else if (Score.score >= 40 && doOnce)
             {
-                //BakrundScroller.scalar = 1.5f;
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                BakrundScroller.scalar = 2f;
                 lvlUp(lvlUpSound, lvlUpClingSound, lvlUpEffect);
                 spawnNumbMin = 1;
                 spawnNumMax = 4;

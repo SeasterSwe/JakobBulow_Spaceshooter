@@ -8,7 +8,7 @@ public class onehitTank : Enemy {
     {
         if (collision.tag == "Player")
         {
-            Destroy(collision.gameObject, 0.1f);
+            Destroy(collision.gameObject, 0.1f); //Behövdes lite delay
         }
     }
 }

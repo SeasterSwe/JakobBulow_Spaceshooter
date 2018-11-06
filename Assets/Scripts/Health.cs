@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
     [Range(1, 10)]
-    public int HP;
+    public int startHP;
 
     private float health;
     private int maxHealth;
@@ -24,8 +24,8 @@ public class Health : MonoBehaviour {
     void Awake()
     {
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
-        maxHealth = HP;
-        health = HP;
+        maxHealth = startHP;
+        health = startHP;
     }
 
 
@@ -58,10 +58,9 @@ public class Health : MonoBehaviour {
             dmgColor = Color.Lerp(Color.white, Color.red, 1f - (health / maxHealth));
             spriteRen.color = dmgColor;        
         }
-
+            
         else if (gameObject.tag == "Player" && coll.tag == "Enemy")
         {
-            Destroy(coll.gameObject);
             ExplotionClone = Instantiate(Explotion, gameObject.transform.position, Explotion.transform.rotation);
             Destroy(ExplotionClone, 0.5f);
             InstaSoundHit(hitSound);

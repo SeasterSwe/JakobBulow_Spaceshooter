@@ -15,7 +15,7 @@ public class DodgingEnemy : shootingEnemy {
     }
     public void SwayEffect()
     {
-        //dividerA Y pos, med 2, +- beroende på pos ist!!
+        //dividerA Y pos, med 2, +- beroende på pos
         if (checkPos)
         {
             swayCorrection = swayStregth / 2;
@@ -32,7 +32,6 @@ public class DodgingEnemy : shootingEnemy {
 
     public int GetPositiveOrNegative()
     {
-
         return (int) ( Mathf.Sign(Random.Range(-1f, 1f)) ) ;
     }
 }
