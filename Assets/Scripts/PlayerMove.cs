@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour {
 
     [Range(0,16)]
-    public float speed, speedX;
+    public float speed;
 
-    public GameObject Player;
+    private GameObject Player;
     private Rigidbody2D rb2;
 
 	void Start ()
@@ -21,6 +21,6 @@ public class PlayerMove : MonoBehaviour {
 	void Update ()
     {
         float speedY = Input.GetAxis("Vertical") * speed;
-        rb2.velocity = new Vector2(speedX, speedY);       
+        rb2.velocity = new Vector2(0, speedY);       
 	}
 }
