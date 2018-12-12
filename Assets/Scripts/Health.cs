@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour {
+public class Health : MonoBehaviour
+{
 
     [Range(1, 10)]
     public int startHP;
@@ -53,28 +54,28 @@ public class Health : MonoBehaviour {
         if (coll.tag == "Bullet")
         {
             health -= 1;
-            InstaSoundHit(hitSound);
             Destroy(coll.gameObject);
+            InstaSoundHit(hitSound);
             dmgColor = Color.Lerp(Color.white, Color.red, 1f - (health / maxHealth));
-            spriteRen.color = dmgColor;        
+            spriteRen.color = dmgColor;
         }
-            
+
         else if (gameObject.tag == "Player" && coll.tag == "Enemy")
         {
             ExplotionClone = Instantiate(Explotion, gameObject.transform.position, Explotion.transform.rotation);
             Destroy(ExplotionClone, 0.5f);
-            InstaSoundHit(hitSound);
 
+            InstaSoundHit(hitSound);
             health -= 1;
             dmgColor = Color.Lerp(Color.white, Color.red, 1f - (health / maxHealth));
             spriteRen.color = dmgColor;
         }
     }
-    public void InstaSoundHit(GameObject sound)
+    private void InstaSoundHit(GameObject sound)
     {
         if (health > 0)
             Instantiate(sound);
     }
 }
-  
+
 
