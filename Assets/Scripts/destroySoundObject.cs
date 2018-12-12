@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class destroySoundObject : MonoBehaviour {
 
-    private AudioSource boi;
-    public AudioClip boi2;
+    private AudioSource source;
+    public AudioClip clipToPlay;
     private void Start()
     {
-        boi = GetComponent<AudioSource>();
-        boi.clip = boi2;
-        boi.Play();
-        Destroy(gameObject, boi.clip.length);
+        source = GetComponent<AudioSource>();
+        source.clip = clipToPlay;
+        source.Play();
+        Destroy(gameObject, source.clip.length);
     }
 }
